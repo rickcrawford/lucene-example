@@ -1,4 +1,4 @@
-Lucene Tika example project
+Lucene Tika search example project
 ==========================
 
 This is a sample project for loading full text of documents into lucene using Tika.
@@ -7,7 +7,7 @@ There are 2 classes, `SearchIndex.java` and `WriteIndex.java`. For this project 
 a script to create a ramdisk for the index, which will disappear once you disconnect or restart. 
 The `INDEX_DIRECTORY` constant has the location of the search index.
 
-WriteIndex.java writes the index to the directory. Metadata stores the document metadata, ContentHandler 
+`WriteIndex.java` writes the index to the directory. `Metadata` stores the document metadata, `ContentHandler` 
 stores the text content. The parser loads the file based on the content type. Tika understands how to pull
 the content form many different file types.
 
