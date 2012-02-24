@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.twodot</groupId>
-	<artifactId>lucene-performance</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Lucene Performance Project</name>
+	<groupId>com.rov3r.examples</groupId>
+	<artifactId>lucene-examples</artifactId>
+	<version>1.0.0</version>
+	<name>Lucene Example Project</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
@@ -22,4 +22,17 @@
 			<version>3.1</version>
 		</dependency>
 	</dependencies>
+	<organization>
+		<name>Two Dot Solutions</name>
+		<url>http://www.twodotsolutions.com</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>rickcrawford</id>
+			<name>Rick Crawford</name>
+			<email>rick.crawford@gmail.com</email>
+			<url>http://github.com/rickcrawford</url>
+		</developer>
+	</developers>
+	<description>Sample project to show some of the features of Lucene and Tika.</description>
 </project>

@@ -24,22 +24,32 @@ import org.apache.tika.sax.BodyContentHandler;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
+
+/**
+ * sample application that writes to a file store
+ *   run ./ramdisk.sh to create a ram disk on OSX
+ *   
+ * @author rick crawford
+ *
+ */
 public class WriteIndex {
 
+	public static final String INDEX_DIRECTORY = "/Volumes/ramdisk/";
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) throws IOException {
 
 		File docs = new File("documents");
-		File indexDir = new File("/Volumes/ramdisk/");
+		File indexDir = new File(INDEX_DIRECTORY);
 		
 		Directory directory = FSDirectory.open(indexDir);
 		
 		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_35);
 		IndexWriterConfig conf = new IndexWriterConfig(Version.LUCENE_35, analyzer);
 		IndexWriter writer = new IndexWriter(directory, conf);
-		
+		writer.deleteAll();
 		
 		for (File file : docs.listFiles()) {
 			Metadata metadata = new Metadata();
@@ -92,6 +102,9 @@ public class WriteIndex {
 		}
 		
 		writer.commit();
+		writer.deleteUnusedFiles();
+		
+		System.out.println(writer.maxDoc() + " documents written");
 	}
 
 }
